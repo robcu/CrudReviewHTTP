@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+
+{{#groceryItem}}
+    {{name}}  -  {{quantity}}  -  {{department}}
+
+
+<form action="/edit-groceryItem" method="post">
+    <input type="text" placeholder="Item name" size="15" name="groceryName"/>
+    <input type="number" placeholder="quantity" size="7" name="groceryQuantity"/>
+    <input type="text" placeholder="department" size="15" name="groceryDept"/>
+    <input type="hidden" value="{{index}}" name="Index"/>
+    <button type="submit">Submit Changes</button>
+</form>
+{{/groceryItem}}
+</body>
+</html>

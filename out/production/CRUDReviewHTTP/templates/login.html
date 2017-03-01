@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+{{^user}}
+<form action="/createUser" method="post">
+    <input type="text" placeholder="Enter your account name" name="acctName"/>
+    <input type="text" placeholder="Enter your password" name="passWord"/>
+    <button type="submit">Enter</button>
+</form>
+{{/user}}
+
+<ol>
+{{#allGroceries}}
+    <li>{{name}}  -  {{quantity}}  -  {{department}}</li>
+{{/allGroceries}}
+</ol>
+</body>
+</html>

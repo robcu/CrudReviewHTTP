@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Groceries</title>
+</head>
+<body>
+
+<form action="/create-groceryItem" method="post">
+    <input type="text" placeholder="Item name" size="15" name="groceryName"/>
+    <input type="number" placeholder="quantity" size="7" name="groceryQuantity"/>
+    <input type="text" placeholder="department" size="15" name="groceryDept"/>
+    <button type="submit">Submit</button>
+</form>
+
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+<ol>
+    {{#groceries}}
+    <li>{{name}}  -  {{quantity}}  -  {{department}}
+        <form action="/edit-groceryItem" method="get"><input type="hidden" value="{{index}}" name="Index"/><button type="submit">Edit</button></form>
+        <form action="/delete-groceryItem" method="get"><input type="hidden" value="{{index}}" name="DeleteIndex"/><button type="submit">Delete</button></form>
+    {{/groceries}}
+</ol>
+</body>
+</html>
+
